@@ -31,7 +31,10 @@ export default function Home() {
     for (let i = 0; i < checked.length; i++) {
       sum += getAuMValue(checked[i]);
     }
-    return sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return sum
+      .toFixed(0)
+      .toString()
+      .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
 
   const sortByMetricKey = (array, key) => {
